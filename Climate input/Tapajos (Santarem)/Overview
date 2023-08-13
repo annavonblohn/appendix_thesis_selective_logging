@@ -1,1 +1,4 @@
-
+Precipitation: pr_1901-2013_santarem.nc
+Temperature: tmp_1901-2014_santarem.nc
+Longwave radiation: lwnet_1901-2011_santarem.nc
+Shortwave radiation: swdown_1901-2011_santarem.nc

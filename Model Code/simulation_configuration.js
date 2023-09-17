@@ -24,10 +24,10 @@
   "version"  : "5.6",       /* LPJmL-FIT version expected */
   "coupled_model": null,
   "individual" : true,
-  "npatch" : 4,
+  "npatch" : 4, /* number of patches per grid cell = npatch * (endgrid - startgrid) */
   "isD95max" : true,
   "root_model": "logistic",  /* root growth model (linear, logistic, none) */
-  "cut_year": -9999,     /* year where all trees are logged */
+  "cut_year": -9999,     /* year where all trees are logged, starting simulation from bare ground */
   "tree_year": -1,       /* year when trees can establish again after cut_year*/
   "random_prec" : true,     /* Random weather generator for precipitation enabled */
   "random_seed" : 2,        /* seed for random number generator */
@@ -66,7 +66,7 @@
   "inheritance" : false, /* inheritance for new saplings deactivated */
 
 
-    /*===================================================================*/
+/*===================================================================*/
 /*  II. Input parameter section                                      */
 /*===================================================================*/
 
@@ -103,13 +103,16 @@
     { "id" : "agb_tree",         "file" : { "fmt" : "cdf", "name" : "output/agb_tree.nc"}},
 
 
-  
 /*===================================================================*/
 /*  V. Run settings section                                          */
 /*===================================================================*/
 
-  "startgrid" : "all", 
+/* maximum of 200 grid cells can be calculated parallel on high performance computer cluster
+  calculating 200 grid cells with similar coordinates and 4 patches each results in 800 patches for one grid cell */
+
+  "startgrid" : "all", /* maximum endgrid-startgrid = 200 */
   "endgrid" : "all", 
+    
 #ifdef CHECKPOINT
   "checkpoint_filename" : "restart/restart_checkpoint.lpj", /* filename of checkpoint file */
 #endif

@@ -79,4 +79,67 @@
 #include "simulation_input.js"    /* Input files of CRU dataset */
 
   
+/*===================================================================*/
+/*  IV. Output data section                                          */
+/*===================================================================*/
+/* Selection of defined output files */
+  
+   { "id" : "timber_harvestc",  "file" : { "fmt" : "cdf", "name" : "output/timber_harvestc.nc"}}, /* newly added logging output */
+    { "id" : "num_logging",      "file" : { "fmt" : "cdf", "name" : "output/num_logging.nc"}}, /* newly added logging output */
+    { "id" : "vol_logging",      "file" : { "fmt" : "cdf", "name" : "output/vol_logging.nc"}}, /* newly added logging output */
+    { "id" : "litc",             "file" : { "fmt" : "cdf", "name" : "output/litc.nc"}},
+    { "id" : "sla_mass",         "file" : { "fmt" : "cdf", "name" : "output/sla_mass.nc"}},
+    { "id" : "longevity_mass",   "file" : { "fmt" : "cdf", "name" : "output/longevity_mass.nc"}},
+    { "id" : "age_mass",         "file" : { "fmt" : "cdf", "name" : "output/age_mass.nc"}},
+    { "id" : "height_mass",      "file" : { "fmt" : "cdf", "name" : "output/height_mass.nc"}},
+    { "id" : "wooddens_mass",    "file" : { "fmt" : "cdf", "name" : "output/wooddens_mass.nc"}},
+    { "id" : "sla_ind",          "file" : { "fmt" : "cdf", "name" : "output/sla_ind.nc"}},
+    { "id" : "longevity_ind",    "file" : { "fmt" : "cdf", "name" : "output/longevity_ind.nc"}},
+    { "id" : "age_ind",          "file" : { "fmt" : "cdf", "name" : "output/age_ind.nc"}},
+    { "id" : "height_ind",       "file" : { "fmt" : "cdf", "name" : "output/height_ind.nc"}},
+    { "id" : "wooddens_ind",     "file" : { "fmt" : "cdf", "name" : "output/wooddens_ind.nc"}},
+    { "id" : "perc",             "file" : { "fmt" : "cdf", "name" : "output/mperc.nc"}},
+    { "id" : "agb",              "file" : { "fmt" : "cdf", "name" : "output/agb.nc"}},
+    { "id" : "agb_tree",         "file" : { "fmt" : "cdf", "name" : "output/agb_tree.nc"}},
+
+
+  
+/*===================================================================*/
+/*  V. Run settings section                                          */
+/*===================================================================*/
+
+  "startgrid" : "all", 
+  "endgrid" : "all", 
+#ifdef CHECKPOINT
+  "checkpoint_filename" : "restart/restart_checkpoint.lpj", /* filename of checkpoint file */
+#endif
+
+#ifndef FROM_RESTART
+
+  "nspinup" : 500,  /* spinup years */
+  "nspinyear" : 30,  /* cycle length during spinup (yr) */
+  "firstyear": 1981, /* first year of simulation */
+  "lastyear" : 1981, /* last year of simulation */
+  "restart" :  false, /* start from restart file */
+  "outputyear" : -8099,
+  "write_restart" : true, /* create restart file: the last year of simulation=restart-year */
+  "write_restart_filename" : "restart/restart_1980_nv_stdfire.lpj", /* filename of restart file */
+  "restart_year": 1980 /* write restart at year */
+
+#else
+
+  "nspinup" : 0,   /* spinup years */
+  "nspinyear" : 30,  /* cycle length during spinup (yr)*/
+  "firstyear": 1981, /* first year of simulation */
+  "lastyear" : 2311, /* last year of simulation */
+  "outputyear": 1981, /* first year output is written  */
+  "restart" :  true, /* start from restart file */
+  "restart_filename" : "restart/restart_1980_nv_stdfire.lpj", /* filename of restart file */
+  "write_restart" : true, /* create restart file */
+  "write_restart_filename" : "restart/restart_2311_nv_stdfire.lpj", /* filename of restart file */
+  "restart_year": 2311 /* write restart at year */
+
+#endif
+}
+
 

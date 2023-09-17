@@ -13,9 +13,7 @@
 /**                                                                                \n**/
 /**************************************************************************************/
 
-//#define DAILY_OUTPUT  /* enables daily output */
-
-{   /* LPJmL configuration in JSON format */
+{   /* LPJmL-FIT configuration in JSON format */
 
 /*===================================================================*/
 /*  I. Simulation description and type section                       */
@@ -23,7 +21,7 @@
 
   "sim_name" : "LPJmL Run", /* Simulation description */
   "sim_id"   : "lpjml",     /* LPJML Simulation type with managed land use */
-  "version"  : "5.6",       /* LPJmL version expected */
+  "version"  : "5.6",       /* LPJmL-FIT version expected */
   "coupled_model": null,
   "individual" : true,
   "npatch" : 4,
@@ -33,8 +31,8 @@
   "tree_year": -1,       /* year when trees can establish again after cut_year*/
   "random_prec" : true,     /* Random weather generator for precipitation enabled */
   "random_seed" : 2,        /* seed for random number generator */
-  "radiation" : "radiation",/* other options: "cloudiness", "radiation", "radiation_swonly", "radiation_lwdown" */
-  "fire" : "no_fire",          /* fire disturbance enabled, other options: NO_FIRE, FIRE, SPITFIRE, SPITFIRE_TMAX (for GLDAS input data) */
+  "radiation" : "radiation", /* other options: "cloudiness", "radiation", "radiation_swonly", "radiation_lwdown" */
+  "fire" : "no_fire",          /* fire disturbance deactivated, other options: NO_FIRE, FIRE, SPITFIRE, SPITFIRE_TMAX (for GLDAS input data) */
   "fire_on_grassland" : false, /* enable fire on grassland for Spitfire */
   "fdi" : "nesterov",       /* different fire danger index formulations: "wvpd" (needs GLDAS input data), "nesterov" */
   "firewood" : false,
@@ -44,20 +42,20 @@
   "extflow" : false,
   "permafrost" : true,
   "johansen" : true,
-  "logging_wooddensity": {"low": 2.2e5, "high": 3.1e5},
+  "logging_wooddensity": {"low": 2.2e5, "high": 3.1e5}, /* WD range for trees subjected to selective logging: 0.5 - 0.7 g/cm³ */
   "soilpar_option" : "no_fixed_soilpar", /* other options "no_fixed_soilpar", "fixed_soilpar", "prescribed_soilpar" */
-  "with_nitrogen" : "no", /* other options: "no", "lim", "unlim" */
+  "with_nitrogen" : "no", /*no nutrient limitation through nitrogen, other options: "no", "lim", "unlim" */
   "store_climate" : true, /* store climate data in spin-up phase */
   "const_climate" : false,
   "shuffle_climate" : true, /* shuffle spinup climate */
   "const_deposition" : false,
   "depos_year_const" : 1901,
   "fix_climate" : true,
-  "fix_climate_year" : 1996,
-  "fix_climate_cycle" : 30,
+  "fix_climate_year" : 1996, /* repeated climate cycle = fix_climate_year +- fix_climate_cycle/2 */
+  "fix_climate_cycle" : 30, /* climate cycle 1981 - 2011 */
   "fix_landuse" : false,
 #ifdef FROM_RESTART
-  "logging" : true,
+  "logging" : true, /* selective logging enabled */
 
 
     

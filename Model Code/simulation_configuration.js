@@ -70,7 +70,7 @@
 /*  II. Input parameter section                                      */
 /*===================================================================*/
 
-#include "param_indiv.js"    /* Input parameter file */
+#include "param.js"    /* Input parameter file */
 
 /*===================================================================*/
 /*  III. Input data section                                          */

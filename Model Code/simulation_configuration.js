@@ -58,3 +58,20 @@
   "fix_landuse" : false,
 #ifdef FROM_RESTART
   "logging" : true,
+
+
+    
+/*===================================================================*/
+/*  II. Input parameter section                                      */
+/*===================================================================*/
+
+#include "param_indiv.js"    /* Input parameter file */
+
+/*===================================================================*/
+/*  III. Input data section                                          */
+/*===================================================================*/
+
+#include "simulation_input.js"    /* Input files of CRU dataset */
+
+  
+

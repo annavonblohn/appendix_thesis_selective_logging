@@ -56,10 +56,17 @@
   "fix_landuse" : false,
 #ifdef FROM_RESTART
   "logging" : true, /* selective logging enabled */
+  "new_seed" : false, /* read random seed from restart file */
+  "population" : false,
+  "landuse" : "no", /* other options: "no", "yes", "const", "all_crops", "only_crops" */
+  "landuse_year_const" : 2000, /* set landuse year for "const" case */
+  "reservoir" : true,
+  "wateruse" : "no",  /* other options: "no", "yes", "all" */
+  "equilsoil" : false,
+  "inheritance" : false, /* inheritance for new saplings deactivated */
 
 
-    
-/*===================================================================*/
+    /*===================================================================*/
 /*  II. Input parameter section                                      */
 /*===================================================================*/
 

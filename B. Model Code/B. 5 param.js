@@ -46,4 +46,46 @@
   "percthres" : 1.0,
   "fpc_tree_max" : 0.95,     /* maximum foliage projective cover for trees */
   "k_mort" : 0.2,            /* coefficient of growth efficiency in mortality equation (k_mort2) */
+    /**************************************************************************************/
+    /* Change for additional logging-induced mortality */
   "logging_mort" : 0.04,     /* additional logging mortality */
+    /**************************************************************************************/
+  "residue_rate": 200,       /* fixed residue rate in gC/m2/yr, ignored if <=0 and if pool >0  */
+  "residue_pool" : 100,      /* fixed aboveground residue pool in gC/m2, ignored if <=0, overrules constant rate */
+  "residue_fbg": 0.25,       /* belowground fraction of prescribed residues */
+  "residue_frac" : 0.95,     /* fraction of residues to be submerged by tillage */
+  "mixing_efficiency" : 0.9, /* mixing efficiency of tillage */
+  "lsuha" : 0.0,             /* livestock density applied for daily or rotational grazing on mangement grasslands */
+  "aprec_lim" : 900,         /* annual prec limit for C3 threshold (mm) */
+  "irrig_soilfrac" : 1.0,             /* fraction of soil filled with water during irrigation event */
+  "canal_conveyance_eff_sand" : 0.7,  /* open canal conveyance efficiency, soil type sand (Ks > 20)*/
+  "canal_conveyance_eff_loam" : 0.75, /* open canal conveyance efficiency, soil type loam (10<=Ks<=20)*/
+  "canal_conveyance_eff_clay" : 0.8,  /* open canal conveyance efficiency, soil type clay (Ks<10) */
+  "pipe_conveyance_eff" : 0.95,       /* pressurized conveyance efficiency*/
+  "saturation_level_surf" : 1.15,     /* saturation level surface irrigation*/
+ "saturation_level_sprink" : 0.55,   /* saturation level sprinkler irrigation*/
+  "saturation_level_drip" : 0.05,     /* saturation level drip irrigation*/
+  "drip_evap_reduction" : 0.6,        /* reduction of drip soil evap */
+  "residues_in_soil" : 0.1,           /* minimum residues in soil*/
+  "residues_in_soil_notillage" : 0.1, /* minimum residues in soil before till_startyear (only if tilled) */
+  "fburnt" : 0,                       /* fraction of trees burnt at deforestation */
+  "ftimber" : 0,                      /* timber fraction at deforestation */
+  "ftimber_wp" : 0.76,                /* timber fraction for wood plantations */
+  "harvest_fast_frac" : 0.34,         /* fraction of harvested wood going to fast pools */
+  "product_turnover" : { "fast" : 0.1, "slow" : 0.01}, /* product turnover (1/yr) */
+  "esoil_reduction" : 0.0,            /* reduction of soil evaporation */
+  "rw_buffer_max" : 0.0,              /* size of rainwater harvesting tank [mm] */
+  "frac_ro_stored" : 0.0,             /* fraction of surface runoff stored in tank */
+  "rw_irrig_thres" : 0.0,             /* threshold to apply rw_irrigation */
+  "soil_infil_rw" : 2.0,              /* values > 2 (default) increase soil infiltration on rainfed and irrigated managed land */
+  "yield_gap_bridge" : 0.0,           /* factor by which laimax value is closed (7 - country-value)*factor */
+  "allocation_threshold" : 35.0,     /* allocation threshold for daily grassland allocation */
+  "hfrac2" : 1000.0,
+  "hfrac_biomass" : 0.75,             /* harvest fraction of biomass grass */
+  "firedura" : -11.06,                /* scaling factor for fire duration for the WVPD*/
+  "hum_ign" : -0.50,                  /* a parameter for scaling the human ignintions within SPITFIRE */
+  "fire_intens" : 0.000001,           /* threshold of fireintensity for which burnt area can be modeled */
+  "rootreduction" : 0.5,              /* fraction used to calculate amount of roots dying at harvest in managed grasslands */
+  "phen_limit" : 0.5                  /* phen. limit for agricultural trees */
+},
+

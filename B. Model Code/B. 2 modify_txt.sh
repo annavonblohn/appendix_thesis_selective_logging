@@ -17,6 +17,6 @@ for year in {1981..2311}; do
         done
     fi
 done
-# convert txt to clm (call model internal function txt2clm) - replace test with desired name
+# convert txt to clm (call model internal function txt2clm) - replace with desired name for clm file
 ../bin/txt2clm -float -ncell 200 -nstep 1 -nbands 1 -firstyear 1981 logging_input.txt logging_50yr_dbh0.35.clm
 

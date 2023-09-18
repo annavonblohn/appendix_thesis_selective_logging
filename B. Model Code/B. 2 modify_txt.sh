@@ -11,6 +11,7 @@ for year in {1981..2311}; do
 # replace with desired DBH treshold
             echo "0.35" >> logging_input.txt
         done
+# for years without logging, insert -1 as DBH threshold
     else
         for i in {0..199}; do
             echo "-1.0" >> logging_input.txt

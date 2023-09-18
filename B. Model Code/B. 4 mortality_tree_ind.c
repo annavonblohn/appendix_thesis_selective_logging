@@ -135,7 +135,7 @@ Bool mortality_tree_ind(Pft *pft,          /**< Pointer to pft                  
   //stemdiam=pow(tree->height/treepar->allom2,1.0/treepar->allom3);
   //mort+=mort_min(stemdiam*1000,stemdiam_max);
 
-
+/**************************************************************************************/
 // Changes for additional logging-induced mortality of trees in patch where nlogging > 0  and for trees > 0.3 m 
 if(pft->patch->nlogging && stemdiam< 0.3) {
      mort+=param.logging_mort;
@@ -146,3 +146,4 @@ if(pft->patch->nlogging && stemdiam< 0.3) {
        mort = mort;
        return isneg_tree(pft);
 }
+/**************************************************************************************/

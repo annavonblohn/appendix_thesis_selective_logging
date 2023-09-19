@@ -23,8 +23,8 @@
 module load mpi/intel/5.1.3
 
 export LPJROOT=/home/annavo/lpjml56FIT
-export LPJRESTARTPATH=/p/projects/biodiversity/annavo/LPJmL56Fit/tapajos_none
-export LPJOUTPATH=/p/projects/biodiversity/annavo/LPJmL56Fit/tapajos_mort0.0_dbh0.5_single
+export LPJRESTARTPATH=/p/projects/biodiversity/annavo/LPJmL56Fit/tapajos_mort0.04_dbh0.5_single
+export LPJOUTPATH=/p/projects/biodiversity/annavo/LPJmL56Fit/tapajos_mort0.04_dbh0.5_single
 export I_MPI_PMI_LIBRARY=/p/system/slurm/lib/libpmi.so
 
 mkdir -p $LPJRESTARTPATH/restart

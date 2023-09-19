@@ -56,7 +56,8 @@
   "permafrost" : true,
   "johansen" : true,
   /*===================================================================*/
-  "logging_wooddensity": {"low": 2.2e5, "high": 3.1e5}, /* WD range for trees subjected to selective logging: 0.5 - 0.7 g/cm³ */
+  /* Model calculates WD as gC/cm³, requiring scaling with factor (10 ** -6) / 0.455 to determine WD as g/cm³ */
+  "logging_wooddensity": {"low": 2.2e5, "high": 3.1e5}, /* WD range for trees subjected to selective logging 0.5 - 0.7 g/cm³ */
   /*===================================================================*/
   "soilpar_option" : "no_fixed_soilpar", /* other options "no_fixed_soilpar", "fixed_soilpar", "prescribed_soilpar" */
   "with_nitrogen" : "no", /* other options: "no", "lim", "unlim" */

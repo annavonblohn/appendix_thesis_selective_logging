@@ -1,1 +1,4 @@
-
+Precipitation: pr_1901-2013_tapajos.nc
+Temperature: tmp_1901-2014_tapajos.nc
+Longwave radiation: lwnet_1901-2011_tapajos.nc
+Shortwave radiation: swdown_1901-2011_tapajos.nc

@@ -210,7 +210,11 @@ extern int getindex(Real,const Histogram *);
 extern Bool fwritesaplings(FILE *,const Sapling *,int);
 extern void fprintsaplings(FILE *,const Sapling *,int);
 extern Sapling *freadsaplings(FILE *,int *,Bool);
+/***********************************************************/
+
 extern Bool logging_tree(const Pft *,Real,Limit);
+
+/***********************************************************/
 
 /* Definitions of macros */
 

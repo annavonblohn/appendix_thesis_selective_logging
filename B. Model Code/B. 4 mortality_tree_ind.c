@@ -62,8 +62,6 @@ Bool mortality_tree_ind(Pft *pft,          /**< Pointer to pft                  
   Pfttreepar *treepar;
   tree=pft->data;
 
-
-// test for bminc related to tree height
   if(tree->height>=15)
     bminc_max = 1000;
   else
@@ -77,8 +75,6 @@ Bool mortality_tree_ind(Pft *pft,          /**< Pointer to pft                  
     bminc_max=70;
 
   treepar=pft->par->data;
-  //if(tree->age>5 && tree->height<0.5)
-  //  return TRUE;
   bm_delta=pft->bm_inc.carbon/pft->nind-turnover_ind;
   if (tree->age==1)
     tree->bm_inc_counter = 1;
@@ -97,20 +93,10 @@ Bool mortality_tree_ind(Pft *pft,          /**< Pointer to pft                  
   else
     mort_max=pft->par->mort_max;
 
-  //mort=(mort_max+(tree->bm_inc_counter/BM_INC_COUNTER_MAX))/(1+k_mort*bm_delta/tree->carbon.leaf/tree->sla);
   sapwood_xs_area = tree->sapwood_old/(tree->wooddens*tree->height);
   leafarea_real = tree->ind.leaf.carbon*pft->sla;
   leafarea_expected = treepar->k_latosa*sapwood_xs_area;
-  //if(tree->sapwood_old>tree->carbon.sapwood)
-  //mort=((tree->sapwood_old-tree->carbon.sapwood)/tree->sapwood_old)/100;
-
-//if (leafarea_expected > leafarea_real)
-  //mort+=(mort_max)/(1+k_mort*bm_delta/leafarea_expected);
-//else
-
-  //mort_max = pow(10,-2.66+0.255/((tree->wooddens*1)/1000000));
   mort_max = pow(10,treepar->wdmort_1+treepar->wdmort_2/((tree->wooddens*1)/1000000));
-//mort_max=MORT_MAX;
 
 
   mort=(mort_max)/(1+param.k_mort*bm_delta/leafarea_real);
@@ -133,9 +119,6 @@ Bool mortality_tree_ind(Pft *pft,          /**< Pointer to pft                  
     mort+=heatstress;
   }
   mort+=mort_min(tree->age,treepar->longevity);
-
-  //stemdiam=pow(tree->height/treepar->allom2,1.0/treepar->allom3);
-  //mort+=mort_min(stemdiam*1000,stemdiam_max);
 
 /**************************************************************************************/
 // Changes for additional logging-induced mortality of trees in patch where nlogging > 0  and for trees > 0.3 m 

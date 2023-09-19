@@ -1,0 +1,42 @@
+B.1 logging_tree.c
+•	Checks if a certain tree fulfils logging requirement  of DBH threshold and WD range
+•	Sets islog true, is tree is supposed to be logged
+
+B.2 logging.c
+•	Loops over each patch and each PFT within a patch
+•	If logging requirement is fulfilled (checked from function logging_tree.c) increment nlogging to monitor number and volume of trees logged
+•	Call timber_harvest_ind.c for alterations of carbon pools after logging
+
+B.3 simulation_input.js
+•	Definition of filepaths for model input
+•	Spatially gridded logging files (clm) and CO2 input were adjusted 
+
+B.4 mortality_tree_ind.c
+•	Mortality of an individual tree is calculated
+•	Mortality of tree is enhanced is logging occurred (nlogging > 0) in respective patch and tree < 0.3 m
+
+B.5 param.js
+•	Parametrisation of simulation runs
+•	Implemented logging_mort as new parameter describing the additional logging-induced mortality
+
+B.6 simulation configuration.js
+•	Configuration of simulation runs
+•	Definition of wood density range for logged trees 
+•	Definition of output-files generated in simulations
+
+B.7 modify_txt.sh
+•	Create spatially gridded logging input file in clm format
+
+B.8 fscanconfig.c
+•	Reads configuration file
+
+B.9 timber_harvest_ind.c
+•	Adjusting carbon pools after logging 
+
+B.10 tree.h
+•	Header file for tree PFTs
+•	Inserted bool logging_tree
+
+B.11 landuse.h
+•	Header file for landuse
+•	Inserted void logging 

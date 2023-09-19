@@ -3,13 +3,20 @@
 
 
 <h3> B.	Model code</h3>
-Alterations in the LPJmL-FIT code <br> <br>
-B.1 Logging function <br>
-B.2 Create clm file with DBH threshold and temporal extent as logging input <br>
-B.3 Simulation inputs <br>
-B.4 Calculate individual mortality of a tree <br>
-B.5 Parameters for simulation runs <br>
-B.6 Simulation configuration file<br>
+Alterations in the LPJmL-FIT code <br> 
+See Overview.txt for brief explanation of different files <br><br>
+Overview.txt <br>
+B.1 logging_tree.c <br>
+B.2 logging.c <br>
+B.3 simulation_input.js <br>
+B.4 mortality_tree_ind.c <br>
+B.5 param.js <br>
+B.6 simulation configuration.js <br>
+B.7 modify_txt.sh <br>
+B.8 fscanconfig.c <br>
+B.9 timber_harvest_ind.c <br>
+B.10 tree.h <br>
+B.11 landuse.h <br>
 
 <h3> C.	Python code for plotting validation and output files </h3>
 Code to create figures shown in the thesis <br> <br>

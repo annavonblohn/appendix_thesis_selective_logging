@@ -1,3 +1,4 @@
+# Function newly implemented for selective logging module
 #!/bin/bash
 # delete existing logging_input.txt
 rm -r logging_input.txt

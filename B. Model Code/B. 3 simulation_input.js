@@ -12,6 +12,7 @@
 /**                                                                                \n**/
 /**************************************************************************************/
 
+/* Changes for selective logging implementation are marked as: */ /***********************************/ 
 
 "inpath" : "/p/projects/biodiversity/bereswil",
 

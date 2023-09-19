@@ -135,7 +135,8 @@
 /*===================================================================*/
 /*  II. Input parameter section                                      */
 /*===================================================================*/
-
+#include "soil.js" /* soil parameter Ü
+  #include "pft_non.jS" /* PFT-specific parameter with nittroge
 #include "param.js"    /* Input parameter file */
 
 /*===================================================================*/

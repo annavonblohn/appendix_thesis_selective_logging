@@ -24,7 +24,7 @@ void logging(Stand *stand,const Config *config)
         if(istree(pft) && logging_tree(pft,stand->cell->logging_dbh,config->logging_wooddensity)) // check if PFT is tree and passes logging DBH treshold
         {
           tree=pft->data; // get pft tree data for tree pft
-          patch->nlogging++; // islogging set to TRUE and nlogging incremented to monitor number of trees logged
+          patch->nlogging++; // nlogging incremented to monitor number of trees logged
 #ifdef DEBUG
           fprinttreephys2carbon(stdout,tree->ind,pft->nind);
           printf("\n");

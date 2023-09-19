@@ -12,6 +12,8 @@
 /**                                                                                \n**/
 /**************************************************************************************/
 
+/* Changes for selective logging implementation are marked as: */ /**********************************
+
 #include "lpj.h"
 #include "tree.h"
 

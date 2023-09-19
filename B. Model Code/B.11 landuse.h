@@ -165,7 +165,11 @@ extern int fertday_biomass(const Cell *,const Config *);
 extern void fertilize_tree(Patch *,Real,Real,int,const Config *);
 extern void setotherstocrop(void);
 extern void mergepatch(Stand *,int,const Config *);
+/****************************************************************/
+
 extern void logging(Stand *,const Config *);
+
+/****************************************************************/
 extern int *fscantreemap(LPJfile *,int *,const char *,int,const Config *config);
 extern Pft_estab initpftestab(Cell *,int,const Config *);
 extern Bool getpftestab(Pft_estab,Cell *,int,const Config *);
